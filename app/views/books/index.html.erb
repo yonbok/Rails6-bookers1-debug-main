@@ -24,4 +24,19 @@
 
 
 <h2>New book</h2>
+<%= form_with model:@book, local:true do |f| %>
 <%= render 'form', book: @book %>
+<div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Book" %>
+  </div>
+<% end %>
